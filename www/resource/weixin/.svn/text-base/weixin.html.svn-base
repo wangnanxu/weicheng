@@ -1,0 +1,16 @@
+<ion-view view-title="微信">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-android-add" ng-click="showPop($event)">
+		</button>
+	</ion-nav-buttons>
+	<ion-content delegate-handle="myScroll" ng-class="{'has-tabs':!$root.hideTabs}">
+		<div class="list">
+			<a class="item item-avatar" ng-repeat="contact in contacts|orderBy:'CurrentTime':true" href="#/weixin/{{contact.ID}}/{{contact.Name}}">
+				<img ng-src="{{contact.Img}}">
+				<h2 ng-bind="contact.Name"></h2>
+				<span class="weixincontent" chat-text="{{contact.CurrentContent}}"></span>
+				<span class="weixintime" ng-bind="contact.CurrentTime"></span>
+			</a>
+		</div>
+	</ion-content>
+</ion-view>

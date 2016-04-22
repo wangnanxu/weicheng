@@ -1,0 +1,28 @@
+<ion-view view-title="{{language.title}}">
+	<ion-content class="padding center" scroll=false>
+		<form name="accountForm" ng-submit="doLogin()">
+			<div class="list">
+				<label class="item item-input item-input-login" ng-click="openModal()">
+					<span class="input-label">{{language.country}}</span>
+					<span class="input-label" style="position: absolute;right: 0;">{{selectCountry.country}}</span>
+				</label>
+				<label class="item item-input item-input-login">
+					<span class="input-label">{{selectCountry.areacode}}</span>
+					<input type="text" name="account" ng-model="userinfo.account" placeholder="{{language.loginplaceholder}}" required>
+				</label>
+				<label class="item item-input item-input-login">
+					<span class="input-label">{{language.password}}</span>
+					<input type="password" name="password" ng-model="userinfo.password" placeholder="{{language.passwordplaceholder}}" required>
+				</label>
+			</div>
+			<div class="btnlogin-w">
+				<button class="button button-balanced" type="submit" ng-disabled="accountForm.account.$error.required||accountForm.password.$error.required">
+					{{language.loginbtn}}
+				</button>
+			</div>
+			<div class="loginprogram">
+				<a href="#/account">{{language.loginproblem}}</a>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

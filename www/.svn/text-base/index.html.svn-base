@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title></title>
+
+		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/loginstyle.css" />
+		<link rel="stylesheet" href="css/message.css" />
+		<link rel="stylesheet" href="lib/photoswipe/css/photoswipe.css" />
+		<link rel="stylesheet" href="lib/photoswipe/css/default-skin/default-skin.css" />
+
+		<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+		<!-- ionic/angularjs js -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
+		<script src="lib/angular-animate/angular-animate.js"></script>
+		<script src="lib/angular-sanitize/angular-sanitize.js"></script>
+		<script src="lib/angular-messages/angular-messages.js"></script>
+		<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+		<script src="lib/photoswipe/js/photoswipe.js"></script>
+		<script src="lib/photoswipe/js/photoswipe-ui-default.js"></script>
+		<script src="lib/ngstorage/ngStorage.min.js"></script>
+		<script src="lib/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
+		<script src="lib/ionic-cache-src/ionic-cache-src.js"></script>
+
+		<!-- cordova script (this will be a 404 during development) -->
+		<script src="cordova.js"></script>
+		<script src="lib/ion-alpha-scroll/src/ion-alpha-scroll.js"></script>
+		<link rel="stylesheet" href="lib/ion-alpha-scroll/src/ion-alpha-scroll.css" />
+		<!--test-->
+		<link rel="stylesheet" type="text/css" href="test/titlescroll.css" />
+		<script src="test/titlescoll.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- your app's js -->
+		<script src="resource/app.js"></script>
+		<script src="resource/comm/model/modle.js"></script>
+		<script src="resource/comm/directive/ngRepeatDirect.js"></script>
+		<script src="resource/comm/directive/hideTabs.js"></script>
+		<script src="resource/comm/directive/ngTypeDirect.js"></script>
+		<script src="resource/comm/directive/ngTIADirect.js"></script>
+		<script src="resource/comm/directive/chatDirect.js"></script>
+		<script src="resource/comm/directive/hideNavBar.js"></script>
+		<script src="resource/comm/directive/selectDirect.js"></script>
+		<script src="resource/comm/directive/fadeMenu.js"></script>
+		<!--默认处理-->
+		<script src="resource/comm/service/jsonservice.js"></script>
+		<script src="resource/comm/service/localstorageservice.js"></script>
+		<script src="resource/comm/service/chinesefilter.js"></script>
+		<script src="resource/comm/service/modalservice.js"></script>
+		<script src="resource/comm/service/communicationservice.js"></script>
+		<script src="resource/comm/service/sqliteservices.js"></script>
+		<script src="resource/comm/service/audioservice.js"></script>
+		<script src="resource/comm/service/cameraservice.js"></script>
+		<script src="resource/comm/service/photoswipeservices.js"></script>
+		<script src="resource/comm/service/wechatservice.js"></script>
+		<script src="resource/comm/service/actionsheet.js"></script>
+		<!--登录-->
+		<script src="resource/login/loginFrontPage/controllers.js"></script>
+		<script src="resource/login/loginFrontPage/services.js"></script>
+
+		<!--账号登陆-->
+		<script src="resource/login/accountLogin/controllers.js"></script>
+		<script src="resource/login/accountLogin/services.js"></script>
+		<!--自动登陆-->
+		<script src="resource/login/directLogin/controllers.js"></script>
+		<script src="resource/login/directLogin/services.js"></script>
+		<!--注册账号-->
+		<script src="resource/login/registAccount/controllers.js"></script>
+		<script src="resource/login/registAccount/services.js"></script>
+		<!--tabs-->
+		<script src="resource/controllers.js"></script>
+		<!--微信-->
+		<script src="resource/weixin/controllers.js"></script>
+		<script src="resource/weixin/contactcontrollers.js"></script>
+		<script src="resource/weixin/services.js"></script>
+		<!--通讯录-->
+		<script src="resource/mailList/controllers.js"></script>
+		<script src="resource/mailList/services.js"></script>
+
+		<!--发现-->
+		<script src="resource/found/controllers.js"></script>
+		<script src="resource/found/friendscontrollers.js"></script>
+		<script src="resource/found/services.js"></script>
+
+		<!--我-->
+		<script src="resource/user/controllers.js"></script>
+		<script src="resource/user/services.js"></script>
+		<!--测试-->
+		<link rel="stylesheet" type="text/css" href="css/fadeMenu.css"/>
+		
+	</head>
+
+	<body ng-app="starter">
+		<ion-nav-bar class="bar-dark" align-title="left" delegate-handle="rootnavbar">
+			<ion-nav-back-button>
+				{{''}}
+			</ion-nav-back-button>
+		</ion-nav-bar>
+		<ion-nav-view></ion-nav-view>
+
+		<!-- Root element of PhotoSwipe. Must have class pswp. -->
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="pswp__bg"></div>
+			<div class="pswp__scroll-wrap">
+				<div class="pswp__container">
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class="pswp__top-bar">
+						<div class="pswp__counter"></div>
+						<button data-role='none' class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+						<button data-role='none' class="pswp__button pswp__button--share" title="Share"></button>
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip">
+						</div>
+					</div>
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

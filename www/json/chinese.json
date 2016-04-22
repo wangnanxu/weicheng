@@ -1,0 +1,60 @@
+{
+	"language": "简体中文",
+	"login": {
+		"loginbtn": "登录",
+		"registbtn": "注册"
+	},
+	"quit": {
+		"title": "退出应用",
+		"template": "你确定要退出应用吗？",
+		"cancel": "取消",
+		"quit": "退出"
+	},
+	"tabs": {
+		"wechat": "微信",
+		"addresslist": "通讯录",
+		"find": "发现",
+		"me": "我",
+		"groupchat": "群聊",
+		"add": "添加朋友",
+		"scancode": "扫一扫"
+	},
+	"accountlogin": {
+		"title": "使用手机号码登录",
+		"country": "国家",
+		"loginplaceholder": "请输入你的手机号",
+		"password": "密码",
+		"passwordplaceholder": "请填写密码",
+		"loginbtn": "登录",
+		"loginproblem": "登录遇到问题?",
+		"choicecountry": "选择国家和地区代码"
+	},
+	"registaccount": {
+		"title": "填写手机号",
+		"nickname": "昵称",
+		"country": "国家",
+		"loginplaceholder": "请输入你的手机号",
+		"password": "密码",
+		"passwordplaceholder": "请填写密码",
+		"registbtn": "注册",
+		"registration": "点击注册即表示同意",
+		"agreement": "用户协议",
+		"choicecountry": "选择国家和地区代码"
+	},
+	"directlogin": {
+		"title": "微信",
+		"passwordplaceholder": "请填写密码",
+		"loginbtn": "登录",
+		"loginproblem": "登录遇到问题?",
+		"more": "更多",
+		"changeaccount": "切换账号",
+		"registbtn": "注册",
+		"cancel": "取消"
+	},
+	"user": {
+		"quit": "退出",
+		"loginout": "退出当前账号",
+		"quit": "关闭微信",
+		"cancel": "取消"
+	}
+}

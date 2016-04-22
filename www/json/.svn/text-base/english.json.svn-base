@@ -1,0 +1,60 @@
+{
+	"language":"English",
+	"login": {
+		"loginbtn": "Login",
+		"registbtn": "Register"
+	},
+	"quit": {
+		"title": "Quit Application",
+		"template": "Are you sure you want to exit the application?",
+		"cancel": "Cancel",
+		"quit": "Quit"
+	},
+	"tabs": {
+		"wechat": "WeChat",
+		"addresslist": "Address List",
+		"find": "Find",
+		"me": "Me",
+		"groupchat":"Group Chat",
+		"add":"Add Friends",
+		"scancode":"Scan Code"
+	},
+	"accountlogin": {
+		"title": "Login using phone number",
+		"country": "country",
+		"loginplaceholder": "Please enter phone number",
+		"password": "password",
+		"passwordplaceholder": "Please enter password",
+		"loginbtn": "login",
+		"loginproblem": "The login problem?",
+		"choicecountry": "Select national and regional code"
+	},
+	"registaccount": {
+		"title": "Fill in the phone number",
+		"nickname": "Nickname",
+		"country": "country",
+		"loginplaceholder": "Please enter phone number",
+		"password": "password",
+		"passwordplaceholder": "Please enter password",
+		"registbtn": "register",
+		"registration": "Click Register to agree ",
+		"agreement": "Agreement",
+		"choicecountry": "Select national and regional code"
+	},
+	"directlogin": {
+		"title": "WeChat",
+		"passwordplaceholder": "Please enter password",
+		"loginbtn": "login",
+		"loginproblem": "The login problem?",
+		"more": "more",
+		"changeaccount": "switch account",
+		"registbtn": "register",
+		"cancel": "cancel"
+	},
+	"user": {
+		"quit": "quit",
+		"loginout": "quit current account",
+		"quit": "close WeChat",
+		"cancel":"cancel"
+	}
+}

@@ -1,0 +1,15 @@
+[
+	{
+		"name": "chinese",
+		"country": "中国",
+		"areacode": "+86"
+	}, {
+		"name": "Albania",
+		"country": "阿尔巴利亚",
+		"areacode": "+355"
+	}, {
+		"name": "Denmark",
+		"country": "丹麦",
+		"areacode": "+45"
+	}
+]

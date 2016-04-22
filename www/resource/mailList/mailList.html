@@ -1,0 +1,26 @@
+<ion-view view-title="通讯录" hide-nav-bar=false>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-android-add" ng-click="ShowPop($event)">
+		</button>
+	</ion-nav-buttons>
+	<ion-content delegate-handle="mailAlphaScroll">
+		<div class="list">
+			<a class="item item-icon-left" ng-click="InitAddFriendModal()">
+				<i class="icon ion-ios-personadd"></i>新的朋友
+			</a>
+			<a class="item item-icon-left" href="#">
+				<i class="icon ion-ios-people"></i>群聊
+			</a>
+		</div>
+		<div data-ng-repeat="(letter, items) in contacts" class="ion_alpha_list">
+			<ion-item class="item item-divider" id="{{letter}}">{{letter}}</ion-item>
+			<ion-item class="item item-avatar itemimg" ng-repeat="item in items" ng-click="openModal('contactinfo',item)">
+				<img ng-src="{{item.Img}}" />
+				<h2 style="margin-top: 10px;">{{item.Name}}</h2>
+			</ion-item>
+		</div>
+	</ion-content>
+	<ul class="ion_alpha_sidebar">
+		<li ng-click="alphaScroll('{{letter}}')" ng-repeat="letter in alphabet">{{letter}}</li>
+	</ul>
+</ion-view>

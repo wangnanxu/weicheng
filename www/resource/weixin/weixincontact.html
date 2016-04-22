@@ -1,0 +1,55 @@
+<ion-view view-title="{{contactName}}">
+	<ion-nav-buttons side="left">
+		<button class="button button-icon ion-ios-arrow-back" ng-click="goBack()">
+		</button>
+	</ion-nav-buttons>
+	<ion-content delegate-handle="MessagesScroll" hide-nav-bar=true ng-class="{ContentHeight:!HOL,ContentLow:HOL}" ng-click="changeFooter(true,type,true)">
+		<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+		</ion-refresher>
+		<ul>
+			<li ng-repeat="Message in Messages" id="message_{{$index}}" ng-show="messages.length-1-$index<10" on-repeat-finesh="MessagesScroll,message_{{$index}}">
+				<div class="messagetime" ng-bind="Message.Time">
+				</div>
+				<span class="triangle" ng-if="!message.isAudio" ng-class="{triangleright:Message.SendID==$root.userinfo.account,triangleleft:Message.SendID!=$root.userinfo.account}"></span>
+				<a name="{{Message.id}}" class="messagebox" ng-class="{boxright:Message.SendID==$root.userinfo.account,boxleft:Message.SendID!=$root.userinfo.account}">
+					<img ng-src="{{Message.Img}}" class="messageboximg" alt="头像" ng-class="{imgright:Message.SendID==$root.userinfo.account,imgleft:Message.SendID!=$root.userinfo.account}" />
+					<span class="contentbox" ng-if="Message.Type=='text'" chat-text="{{Message.Content}}"></span>
+					<span class="button audiobutton" ng-if="Message.Type=='audio'" ng-click="onAudio(2,Message.Content)">
+						{{Message.AudioTime}}
+						<i class="icon ion-radio-waves"></i>
+					</span>
+					<p ng-if="Message.Type=='img'">
+						<img class="contentimg" cache-src="{{Message.Content}}" ng-click="scanPhoto('{{Message.Content}}',{{$index}})" />
+					</p>
+					<p ng-if="Message.Type=='expre'">
+						<img class="contentexpreimg" cache-src="{{Message.Content}}" />
+					</p>
+				</a>
+				<!--<chat-text data="Message" ng-if="Message.Type=='text'"></chat-text>
+				<chat-audio data="Message" ng-if="Message.Type=='audio'"></chat-audio>
+				<chat-image data="Message" datas="Messages" index="$index" ng-if="Message.Type=='img'"></chat-image>-->
+			</li>
+		</ul>
+	</ion-content>
+	<ion-footer-bar class="bar-stable nopadding" ng-class="{FooterHeight:!HOL,FooterLow:HOL}">
+		<div class="footertop">
+			<button class="button button-icon btnCTA" ng-class="{'ion-ios-mic-outline':type==0,'ion-ios-compose-outline':type==1}" ng-click="changeFooter(0);"></button>
+			<button class="button button-icon ion-happy-outline btnCTA" style="margin-left:0;" ng-click="changeFooter(2);"></button>
+			<label class="item-input-wrapper labelheight btnTOA" ng-if="type==0">
+				<input type="text" id="input" placeholder="输入内容" ng-keyup="addMessage($event)" ng-model="newMessage.Content" ng-focus="changeFooter()" ng-blur="" style="width: 100%;background: #EEEEEE;" required>
+			</label>
+			<button class="button button-icon btnTA" ng-if="type==1" style="margin-left:0;" ng-class="{'ion-ios-arrow-down':state,'ion-ios-arrow-up':!state}" ng-model="state" ng-click="changeFooter(1);"></button>
+			<button class="button button-icon ion-ios-plus-outline btnCTA" style="margin-left:0;" ng-click="showSheet();"></button>
+			<div class="footerbottom">
+				<div class="divaudio" ng-show="fo_type==1">
+					<button class="button btnaudio" style="background-color: #2196F3;color: #FFFFFF;" on-hold="onAudio(0)" on-drag-right="onAudio(3)" on-drag-left="onAudio(3)" on-release="onAudio(1)">录音</button>
+				</div>
+				<div class="divexpre" ng-show="fo_type==2">
+					<div class="exprespan" ng-repeat="b in experssions" ng-click="addExpression(b.exp)">
+						<img ng-src="{{b.img}}" class="expreimg" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-footer-bar>
+</ion-view>

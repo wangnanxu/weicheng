@@ -1,0 +1,924 @@
+
+/*
+* Mixins
+*/
+
+body {
+	/*background: url(http://rats-funnybone.com/wp-content/uploads/2013/08/aura-background-large-1.jpg) no-repeat;*/
+	background-size: 100%;
+}
+.fab-menu {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transform: scale(2);
+	transform: scale(2);
+	position: absolute;
+	top: 50px;
+	right: auto;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+	padding: 20px;
+}
+.fab-menu.fab-menu-left {
+	top: auto;
+	right: auto;
+	left: 0;
+	bottom: 0;
+}
+.fab-menu.fab-menu-right {
+	top: auto;
+	right: 0;
+	left: auto;
+	bottom: 0;
+}
+.fab-menu .fab-menu-button {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	z-index: 101;
+}
+.fab-menu-items {
+	/**
+   * @see http://hugogiraudel.com/2013/04/02/items-on-circle/
+   */
+	
+	z-index: 99;
+	position: absolute;
+	width: 168px;
+	height: 168px;
+	top: auto;
+	right: auto;
+	bottom: 0;
+	left: 0;
+	border-radius: 50%;
+	list-style: none;
+}
+.fab-menu.active .fab-menu-items {
+	display: block;
+}
+.fab-menu-items > li {
+	-webkit-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	display: block;
+	position: absolute;
+	width: 56px;
+	height: 56px;
+	top: auto;
+	right: auto;
+	bottom: 20px;
+	left: 20px;
+}
+.fab-menu-overlay {
+	-webkit-transition: all 0.2s ease 0.2s;
+	transition: all 0.2s ease 0.2s;
+	position: fixed;
+	display: none;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: 100%;
+	z-index: 98;
+}
+.fab-menu-overlay.active {
+	display: block;
+}
+.fab-left.title-left,
+.fab-left.title.title-left {
+	left: 68px
+}
+.bar .button.button-fab,
+.button.button-fab {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+	z-index: 9999;
+	width: 56px;
+	height: 56px;
+	max-height: initial;
+	max-width: initial;
+	border-radius: 50%;
+	border-radius: 50%;
+	overflow: hidden;
+	padding: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition: .3s fade-in-out;
+	transition: .3s fade-in-out;
+	-webkit-transition-property: -webkit-transform, box-shadow;
+	transition-property: transform, box-shadow
+}
+.bar .button.button-fab.button-fab-bottom-right,
+.button.button-fab.button-fab-bottom-right {
+	top: auto;
+	right: 16px;
+	bottom: 16px;
+	left: auto;
+	position: absolute
+}
+.bar .button.button-fab.button-fab-bottom-left,
+.button.button-fab.button-fab-bottom-left {
+	top: auto;
+	right: auto;
+	bottom: 16px;
+	left: 16px;
+	position: absolute
+}
+.bar .button.button-fab.button-fab-top-right,
+.button.button-fab.button-fab-top-right {
+	top: 32px;
+	right: 16px;
+	bottom: auto;
+	left: auto;
+	position: absolute
+}
+.bar .button.button-fab.button-fab-top-left,
+.button.button-fab.button-fab-top-left {
+	top: 32px;
+	right: auto;
+	bottom: auto;
+	left: 16px;
+	position: absolute
+}
+.bar .button.button-fab.button-fab-top-left.expanded,
+.bar .button.button-fab.button-fab-top-right.expanded,
+.button.button-fab.button-fab-top-left.expanded,
+.button.button-fab.button-fab-top-right.expanded {
+	top: 48px
+}
+.bar .button.button-fab i,
+.button.button-fab i {
+	font-size: 2.5rem;
+	margin-top: 0
+}
+.bar .button.button-fab.mini,
+.button.button-fab.mini {
+	width: 40px;
+	height: 40px
+}
+.bar .button.button-fab.mini i,
+.button.button-fab.mini i {
+	font-size: 2rem
+}
+.button.button-fab.button-fab-top-left.motion {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(-120px, 60px, 0);
+	transform: translate3d(-120px, 60px, 0);
+	-webkit-transition: all .1s ease-out;
+	transition: all .1s ease-out
+}
+.button.button-fab.button-fab-top-right.motion {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(120px, 60px, 0);
+	transform: translate3d(120px, 60px, 0);
+	-webkit-transition: all .1s ease-out;
+	transition: all .1s ease-out
+}
+.button.button-fab.button-fab-bottom-left.motion {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(-120px, 60px, 0);
+	transform: translate3d(-120px, 60px, 0);
+	-webkit-transition: all .1s ease-out;
+	transition: all .1s ease-out
+}
+.button.button-fab.button-fab-bottom-right.motion {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(120px, 60px, 0);
+	transform: translate3d(120px, 60px, 0);
+	-webkit-transition: all .1s ease-out;
+	transition: all .1s ease-out
+}
+.bar .button.button-floating,
+.button.button-floating {
+	display: inline-block;
+	color: #FFF;
+	position: relative;
+	z-index: 1;
+	width: 37px;
+	height: 37px;
+	line-height: 37px;
+	padding: 0;
+	border-radius: 50%;
+	background-clip: padding-box;
+	-webkit-transition: .3s;
+	transition: .3s;
+	cursor: pointer
+}
+.bar .button.button-floating i,
+.button.button-floating i {
+	width: inherit;
+	display: inline-block;
+	text-align: center;
+	color: #FFF;
+	line-height: 37px
+}
+.bar .button.button-floating.button-large,
+.button.button-floating.button-large {
+	width: 55.5px;
+	height: 55.5px
+}
+.bar .button.button-floating.button-large i,
+.button.button-floating.button-large i {
+	line-height: 55.5px
+}
+.bar .button-positive,
+.bar .button-positive.activated,
+.bar .button-positive:active,
+.bar .button-positive:hover,
+.bar-positive,
+.bar-positive.activated,
+.bar-positive:active,
+.bar-positive:hover,
+.button-bar-positive,
+.button-bar-positive.activated,
+.button-bar-positive:active,
+.button-bar-positive:hover,
+.button-positive,
+.button-positive.activated,
+.button-positive:active,
+.button-positive:hover,
+.header-positive,
+.header-positive.activated,
+.header-positive:active,
+.header-positive:hover,
+.positive-bg,
+.positive-bg.activated,
+.positive-bg:active,
+.positive-bg:hover,
+.positive-border,
+.positive-border.activated,
+.positive-border:active,
+.positive-border:hover {
+	background-color: #3F51B5;
+	color: #fff
+}
+.bar .button-positive-900,
+.bar .button-positive-900.activated,
+.bar .button-positive-900:active,
+.bar .button-positive-900:hover,
+.bar-positive-900,
+.bar-positive-900.activated,
+.bar-positive-900:active,
+.bar-positive-900:hover,
+.button-bar-positive-900,
+.button-bar-positive-900.activated,
+.button-bar-positive-900:active,
+.button-bar-positive-900:hover,
+.button-positive-900,
+.button-positive-900.activated,
+.button-positive-900:active,
+.button-positive-900:hover,
+.header-positive-900,
+.header-positive-900.activated,
+.header-positive-900:active,
+.header-positive-900:hover,
+.positive-900-bg,
+.positive-900-bg.activated,
+.positive-900-bg:active,
+.positive-900-bg:hover,
+.positive-900-border,
+.positive-900-border.activated,
+.positive-900-border:active,
+.positive-900-border:hover {
+	background-color: #1A237E;
+	color: #fff
+}
+.bar .button-positive-100,
+.bar .button-positive-100.activated,
+.bar .button-positive-100:active,
+.bar .button-positive-100:hover,
+.bar-positive-100,
+.bar-positive-100.activated,
+.bar-positive-100:active,
+.bar-positive-100:hover,
+.button-bar-positive-100,
+.button-bar-positive-100.activated,
+.button-bar-positive-100:active,
+.button-bar-positive-100:hover,
+.button-positive-100,
+.button-positive-100.activated,
+.button-positive-100:active,
+.button-positive-100:hover,
+.header-positive-100,
+.header-positive-100.activated,
+.header-positive-100:active,
+.header-positive-100:hover,
+.positive-100-bg,
+.positive-100-bg.activated,
+.positive-100-bg:active,
+.positive-100-bg:hover,
+.positive-100-border,
+.positive-100-border.activated,
+.positive-100-border:active,
+.positive-100-border:hover {
+	background-color: #C5CAE9;
+	color: #fff
+}
+.bar .button-calm,
+.bar .button-calm.activated,
+.bar .button-calm:active,
+.bar .button-calm:hover,
+.bar-calm,
+.bar-calm.activated,
+.bar-calm:active,
+.bar-calm:hover,
+.button-bar-calm,
+.button-bar-calm.activated,
+.button-bar-calm:active,
+.button-bar-calm:hover,
+.button-calm,
+.button-calm.activated,
+.button-calm:active,
+.button-calm:hover,
+.calm-bg,
+.calm-bg.activated,
+.calm-bg:active,
+.calm-bg:hover,
+.calm-border,
+.calm-border.activated,
+.calm-border:active,
+.calm-border:hover,
+.header-calm,
+.header-calm.activated,
+.header-calm:active,
+.header-calm:hover {
+	background-color: #2196F3;
+	color: #fff
+}
+.bar .button-calm-900,
+.bar .button-calm-900.activated,
+.bar .button-calm-900:active,
+.bar .button-calm-900:hover,
+.bar-calm-900,
+.bar-calm-900.activated,
+.bar-calm-900:active,
+.bar-calm-900:hover,
+.button-bar-calm-900,
+.button-bar-calm-900.activated,
+.button-bar-calm-900:active,
+.button-bar-calm-900:hover,
+.button-calm-900,
+.button-calm-900.activated,
+.button-calm-900:active,
+.button-calm-900:hover,
+.calm-900-bg,
+.calm-900-bg.activated,
+.calm-900-bg:active,
+.calm-900-bg:hover,
+.calm-900-border,
+.calm-900-border.activated,
+.calm-900-border:active,
+.calm-900-border:hover,
+.header-calm-900,
+.header-calm-900.activated,
+.header-calm-900:active,
+.header-calm-900:hover {
+	background-color: #0D47A1;
+	color: #fff
+}
+.bar .button-calm-100,
+.bar .button-calm-100.activated,
+.bar .button-calm-100:active,
+.bar .button-calm-100:hover,
+.bar-calm-100,
+.bar-calm-100.activated,
+.bar-calm-100:active,
+.bar-calm-100:hover,
+.button-bar-calm-100,
+.button-bar-calm-100.activated,
+.button-bar-calm-100:active,
+.button-bar-calm-100:hover,
+.button-calm-100,
+.button-calm-100.activated,
+.button-calm-100:active,
+.button-calm-100:hover,
+.calm-100-bg,
+.calm-100-bg.activated,
+.calm-100-bg:active,
+.calm-100-bg:hover,
+.calm-100-border,
+.calm-100-border.activated,
+.calm-100-border:active,
+.calm-100-border:hover,
+.header-calm-100,
+.header-calm-100.activated,
+.header-calm-100:active,
+.header-calm-100:hover {
+	background-color: #BBDEFB;
+	color: #fff
+}
+.bar .button-royal,
+.bar .button-royal.activated,
+.bar .button-royal:active,
+.bar .button-royal:hover,
+.bar-royal,
+.bar-royal.activated,
+.bar-royal:active,
+.bar-royal:hover,
+.button-bar-royal,
+.button-bar-royal.activated,
+.button-bar-royal:active,
+.button-bar-royal:hover,
+.button-royal,
+.button-royal.activated,
+.button-royal:active,
+.button-royal:hover,
+.header-royal,
+.header-royal.activated,
+.header-royal:active,
+.header-royal:hover,
+.royal-bg,
+.royal-bg.activated,
+.royal-bg:active,
+.royal-bg:hover,
+.royal-border,
+.royal-border.activated,
+.royal-border:active,
+.royal-border:hover {
+	background-color: #673AB7;
+	color: #fff
+}
+.bar .button-royal-900,
+.bar .button-royal-900.activated,
+.bar .button-royal-900:active,
+.bar .button-royal-900:hover,
+.bar-royal-900,
+.bar-royal-900.activated,
+.bar-royal-900:active,
+.bar-royal-900:hover,
+.button-bar-royal-900,
+.button-bar-royal-900.activated,
+.button-bar-royal-900:active,
+.button-bar-royal-900:hover,
+.button-royal-900,
+.button-royal-900.activated,
+.button-royal-900:active,
+.button-royal-900:hover,
+.header-royal-900,
+.header-royal-900.activated,
+.header-royal-900:active,
+.header-royal-900:hover,
+.royal-900-bg,
+.royal-900-bg.activated,
+.royal-900-bg:active,
+.royal-900-bg:hover,
+.royal-900-border,
+.royal-900-border.activated,
+.royal-900-border:active,
+.royal-900-border:hover {
+	background-color: #311B92;
+	color: #fff
+}
+.bar .button-royal-100,
+.bar .button-royal-100.activated,
+.bar .button-royal-100:active,
+.bar .button-royal-100:hover,
+.bar-royal-100,
+.bar-royal-100.activated,
+.bar-royal-100:active,
+.bar-royal-100:hover,
+.button-bar-royal-100,
+.button-bar-royal-100.activated,
+.button-bar-royal-100:active,
+.button-bar-royal-100:hover,
+.button-royal-100,
+.button-royal-100.activated,
+.button-royal-100:active,
+.button-royal-100:hover,
+.header-royal-100,
+.header-royal-100.activated,
+.header-royal-100:active,
+.header-royal-100:hover,
+.royal-100-bg,
+.royal-100-bg.activated,
+.royal-100-bg:active,
+.royal-100-bg:hover,
+.royal-100-border,
+.royal-100-border.activated,
+.royal-100-border:active,
+.royal-100-border:hover {
+	background-color: #D1C4E9;
+	color: #fff
+}
+.balanced-bg,
+.balanced-bg.activated,
+.balanced-bg:active,
+.balanced-bg:hover,
+.balanced-border,
+.balanced-border.activated,
+.balanced-border:active,
+.balanced-border:hover,
+.bar .button-balanced,
+.bar .button-balanced.activated,
+.bar .button-balanced:active,
+.bar .button-balanced:hover,
+.bar-balanced,
+.bar-balanced.activated,
+.bar-balanced:active,
+.bar-balanced:hover,
+.button-balanced,
+.button-balanced.activated,
+.button-balanced:active,
+.button-balanced:hover,
+.button-bar-balanced,
+.button-bar-balanced.activated,
+.button-bar-balanced:active,
+.button-bar-balanced:hover,
+.header-balanced,
+.header-balanced.activated,
+.header-balanced:active,
+.header-balanced:hover {
+	background-color: #4CAF50;
+	color: #fff
+}
+.balanced-900-bg,
+.balanced-900-bg.activated,
+.balanced-900-bg:active,
+.balanced-900-bg:hover,
+.balanced-900-border,
+.balanced-900-border.activated,
+.balanced-900-border:active,
+.balanced-900-border:hover,
+.bar .button-balanced-900,
+.bar .button-balanced-900.activated,
+.bar .button-balanced-900:active,
+.bar .button-balanced-900:hover,
+.bar-balanced-900,
+.bar-balanced-900.activated,
+.bar-balanced-900:active,
+.bar-balanced-900:hover,
+.button-balanced-900,
+.button-balanced-900.activated,
+.button-balanced-900:active,
+.button-balanced-900:hover,
+.button-bar-balanced-900,
+.button-bar-balanced-900.activated,
+.button-bar-balanced-900:active,
+.button-bar-balanced-900:hover,
+.header-balanced-900,
+.header-balanced-900.activated,
+.header-balanced-900:active,
+.header-balanced-900:hover {
+	background-color: #1B5E20;
+	color: #fff
+}
+.balanced-100-bg,
+.balanced-100-bg.activated,
+.balanced-100-bg:active,
+.balanced-100-bg:hover,
+.balanced-100-border,
+.balanced-100-border.activated,
+.balanced-100-border:active,
+.balanced-100-border:hover,
+.bar .balanced-100-bg:hover,
+.bar .button-balanced-100,
+.bar .button-balanced-100.activated,
+.bar .button-balanced-100:active,
+.bar-balanced-100,
+.bar-balanced-100.activated,
+.bar-balanced-100:active,
+.bar-balanced-100:hover,
+.button-balanced-100,
+.button-balanced-100.activated,
+.button-balanced-100:active,
+.button-balanced-100:hover,
+.button-bar-balanced-100,
+.button-bar-balanced-100.activated,
+.button-bar-balanced-100:active,
+.button-bar-balanced-100:hover,
+.header-balanced-100,
+.header-balanced-100.activated,
+.header-balanced-100:active,
+.header-balanced-100:hover {
+	background-color: #C8E6C9;
+	color: #fff
+}
+.bar .button-energized,
+.bar .button-energized.activated,
+.bar .button-energized:active,
+.bar .button-energized:hover,
+.bar-energized,
+.bar-energized.activated,
+.bar-energized:active,
+.bar-energized:hover,
+.button-bar-energized,
+.button-bar-energized.activated,
+.button-bar-energized:active,
+.button-bar-energized:hover,
+.button-energized,
+.button-energized.activated,
+.button-energized:active,
+.button-energized:hover,
+.energized-bg,
+.energized-bg.activated,
+.energized-bg:active,
+.energized-bg:hover,
+.energized-border,
+.energized-border.activated,
+.energized-border:active,
+.energized-border:hover,
+.header-energized,
+.header-energized.activated,
+.header-energized:active,
+.header-energized:hover {
+	background-color: #FF9800;
+	color: #fff
+}
+.bar .button-energized-900,
+.bar .button-energized-900.activated,
+.bar .button-energized-900:active,
+.bar .button-energized-900:hover,
+.bar-energized-900,
+.bar-energized-900.activated,
+.bar-energized-900:active,
+.bar-energized-900:hover,
+.button-bar-energized-900,
+.button-bar-energized-900.activated,
+.button-bar-energized-900:active,
+.button-bar-energized-900:hover,
+.button-energized-900,
+.button-energized-900.activated,
+.button-energized-900:active,
+.button-energized-900:hover,
+.energized-900-bg,
+.energized-900-bg.activated,
+.energized-900-bg:active,
+.energized-900-bg:hover,
+.energized-900-border,
+.energized-900-border.activated,
+.energized-900-border:active,
+.energized-900-border:hover,
+.header-energized-900,
+.header-energized-900.activated,
+.header-energized-900:active,
+.header-energized-900:hover {
+	background-color: #E65100;
+	color: #fff
+}
+.bar .button-energized-100,
+.bar .button-energized-100.activated,
+.bar .button-energized-100:active,
+.bar .button-energized-100:hover,
+.bar-energized-100,
+.bar-energized-100.activated,
+.bar-energized-100:active,
+.bar-energized-100:hover,
+.button-bar-energized-100,
+.button-bar-energized-100.activated,
+.button-bar-energized-100:active,
+.button-bar-energized-100:hover,
+.button-energized-100,
+.button-energized-100.activated,
+.button-energized-100:active,
+.button-energized-100:hover,
+.energized-100-bg,
+.energized-100-bg.activated,
+.energized-100-bg:active,
+.energized-100-bg:hover,
+.energized-100-border,
+.energized-100-border.activated,
+.energized-100-border:active,
+.energized-100-border:hover,
+.header-energized-100,
+.header-energized-100.activated,
+.header-energized-100:active,
+.header-energized-100:hover {
+	background-color: #FFE0B2
+}
+.assertive-bg,
+.assertive-bg.activated,
+.assertive-bg:active,
+.assertive-bg:hover,
+.assertive-border,
+.assertive-border.activated,
+.assertive-border:active,
+.assertive-border:hover,
+.bar .button-assertive,
+.bar .button-assertive.activated,
+.bar .button-assertive:active,
+.bar .button-assertive:hover,
+.bar-assertive,
+.bar-assertive.activated,
+.bar-assertive:active,
+.bar-assertive:hover,
+.button-assertive,
+.button-assertive.activated,
+.button-assertive:active,
+.button-assertive:hover,
+.button-bar-assertive,
+.button-bar-assertive.activated,
+.button-bar-assertive:active,
+.button-bar-assertive:hover,
+.header-assertive,
+.header-assertive.activated,
+.header-assertive:active,
+.header-assertive:hover {
+	background-color: #F44336;
+	color: #fff
+}
+.assertive-900-bg,
+.assertive-900-bg.activated,
+.assertive-900-bg:active,
+.assertive-900-bg:hover,
+.assertive-900-border,
+.assertive-900-border.activated,
+.assertive-900-border:active,
+.assertive-900-border:hover,
+.bar .button-assertive-900,
+.bar .button-assertive-900.activated,
+.bar .button-assertive-900:active,
+.bar .button-assertive-900:hover,
+.bar-assertive-900,
+.bar-assertive-900.activated,
+.bar-assertive-900:active,
+.bar-assertive-900:hover,
+.button-assertive-900,
+.button-assertive-900.activated,
+.button-assertive-900:active,
+.button-assertive-900:hover,
+.button-bar-assertive-900,
+.button-bar-assertive-900.activated,
+.button-bar-assertive-900:active,
+.button-bar-assertive-900:hover,
+.header-assertive-900,
+.header-assertive-900.activated,
+.header-assertive-900:active,
+.header-assertive-900:hover {
+	background-color: #B71C1C;
+	color: #fff
+}
+.assertive-100-bg,
+.assertive-100-bg.activated,
+.assertive-100-bg:active,
+.assertive-100-bg:hover,
+.assertive-100-border,
+.assertive-100-border.activated,
+.assertive-100-border:active,
+.assertive-100-border:hover,
+.bar .button-assertive-100,
+.bar .button-assertive-100.activated,
+.bar .button-assertive-100:active,
+.bar .button-assertive-100:hover,
+.bar-assertive-100,
+.bar-assertive-100.activated,
+.bar-assertive-100:active,
+.bar-assertive-100:hover,
+.button-assertive-100,
+.button-assertive-100.activated,
+.button-assertive-100:active,
+.button-assertive-100:hover,
+.button-bar-assertive-100,
+.button-bar-assertive-100.activated,
+.button-bar-assertive-100:active,
+.button-bar-assertive-100:hover,
+.header-assertive-100,
+.header-assertive-100.activated,
+.header-assertive-100:active,
+.header-assertive-100:hover {
+	background-color: #FFCDD2;
+	color: #fff
+}
+.positive,
+.positive *,
+.positive-900,
+.positive-900 *,
+.positive-900:active,
+.positive-900:active *,
+.positive-900:hover,
+.positive-900:hover *,
+.positive:active,
+.positive:active *,
+.positive:hover,
+.positive:hover * {
+	color: #3F51B5
+}
+.positive-100,
+.positive-100 *,
+.positive-100:active,
+.positive-100:active *,
+.positive-100:hover,
+.positive-100:hover * {
+	color: #C5CAE9
+}
+.calm-900,
+.calm-900 *,
+.calm-900:active,
+.calm-900:active *,
+.calm-900:hover,
+.calm-900:hover * {
+	color: #0D47A1
+}
+.calm-100,
+.calm-100 *,
+.calm-100:active,
+.calm-100:active *,
+.calm-100:hover,
+.calm-100:hover * {
+	color: #BBDEFB
+}
+.royal,
+.royal *,
+.royal:active,
+.royal:active *,
+.royal:hover,
+.royal:hover * {
+	color: #673AB7
+}
+.royal-900,
+.royal-900 *,
+.royal-900:active,
+.royal-900:active *,
+.royal-900:hover,
+.royal-900:hover * {
+	color: #311B92
+}
+.royal-100,
+.royal-100 *,
+.royal-100:active,
+.royal-100:active *,
+.royal-100:hover,
+.royal-100:hover * {
+	color: #D1C4E9
+}
+.balanced,
+.balanced *,
+.balanced:active,
+.balanced:active *,
+.balanced:hover,
+.balanced:hover * {
+	color: #4CAF50
+}
+.balanced-900,
+.balanced-900 *,
+.balanced-900:active,
+.balanced-900:active *,
+.balanced-900:hover,
+.balanced-900:hover * {
+	color: #1B5E20
+}
+.balanced-100,
+.balanced-100 *,
+.balanced-100:active,
+.balanced-100:active *,
+.balanced-100:hover,
+.balanced-100:hover * {
+	color: #C8E6C9
+}
+.energized,
+.energized *,
+.energized:active,
+.energized:active *,
+.energized:hover,
+.energized:hover * {
+	color: #FF9800
+}
+.energized-900,
+.energized-900 *,
+.energized-900:active,
+.energized-900:active *,
+.energized-900:hover,
+.energized-900:hover * {
+	color: #E65100
+}
+.energized-100,
+.energized-100 *,
+.energized-100:active,
+.energized-100:active *,
+.energized-100:hover,
+.energized-100:hover * {
+	color: #FFE0B2
+}
+.assertive,
+.assertive *,
+.assertive:active,
+.assertive:active *,
+.assertive:hover,
+.assertive:hover * {
+	color: #F44336
+}
+.assertive-900,
+.assertive-900 *,
+.assertive-900:active,
+.assertive-900:active *,
+.assertive-900:hover,
+.assertive-900:hover * {
+	color: #B71C1C
+}
+.assertive-100,
+.assertive-100 *,
+.assertive-100:active,
+.assertive-100:active *,
+.assertive-100:hover,
+.assertive-100:hover * {
+	color: #FFCDD2
+}

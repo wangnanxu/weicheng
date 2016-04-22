@@ -1,0 +1,91 @@
+angular.module("TabsModel", [])
+	.controller('tabsCtrl', ['$scope', '$rootScope', '$ionicPopover', '$ModalServ', '$cordovaBarcodeScanner', '$JsonServ', '$Sqlite', '$stateParams', '$state',
+		function($scope, $rootScope, $ionicPopover, $ModalServ, $cordovaBarcodeScanner, $JsonServ, $Sqlite, $stateParams, $state) {
+			$scope.language = $rootScope.Language.tabs;
+			$scope.tabs = {
+				wechat: $scope.language.wechat,
+				addresslist: $scope.language.addresslist,
+				find: $scope.language.find,
+				me: $scope.language.me,
+				groupchat: $scope.language.groupchat,
+				add: $scope.language.add,
+				scancode: $scope.language.scancode
+			};
+			$ionicPopover.fromTemplateUrl('resource/popover.html', {
+				scope: $scope
+			}).then(function(popover) {
+				$scope.popover = popover;
+			})
+			$scope.showPop = function($event) {
+				$scope.popover.show($event);
+			}
+			$scope.selectPop = function(choose) {
+				if (choose == 2) {
+					$rootScope.Modals["addfriendModal"].show();
+				} else if (choose == 3) {
+					$scope.scanCode();
+				}
+				$scope.popover.hide();
+			};
+			$scope.$on("EmitAddContact", function(event, data) {
+				$scope.$broadcast("AddContact", data);
+			});
+
+			$ModalServ.initModal($scope, "addfriend").then(function(modal) {
+				$rootScope.Modals = modal;
+			}); //自动创建Modal
+
+			$scope.closeRootModal = closeRootModal;
+			$scope.openRootModal = openRootModal;
+
+			function openRootModal(modal) {
+				$rootScope.Modals[modal + "Modal"].show();
+			};
+
+			function closeRootModal(modal) {
+				$rootScope.Modals[modal + "Modal"].hide();
+			};
+
+			$scope.scanCode = scanCode;
+
+			function scanCode() {
+				$scope.barcodeData = "";
+				document.addEventListener("deviceready", function() {
+					$cordovaBarcodeScanner.scan().then(function(barcodeData) {
+						// Success! Barcode data is here
+						$scope.barcodeData = barcodeData;
+						alert("We got a barcode\n" + "Result: " + barcodeData.text + "\n" + "Format: " + barcodeData.format + "\n" + "Cancelled: " + barcodeData.cancelled);
+					}, function(error) {
+						// An error occurred
+						alert(error)
+					});
+					//					// NOTE: encoding not functioning yet
+					//					$cordovaBarcodeScanner
+					//						.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com")
+					//						.then(function(success) {
+					//							// Success!
+					//						}, function(error) {
+					//							// An error occurred
+					//						});
+				}, false);
+			};
+			$scope.AddContactsData = AddContactsData;
+
+			function AddContactsData() {
+				$JsonServ.get("contacts").then(function(data) {
+					for (var i = 0; i < data.length; i++) {
+						$Sqlite.AddContacts(data[i]);
+					}
+				})
+			}
+
+			$scope.GoDefail = function() {
+				if (!$stateParams.contactId) {
+					$state.go("tab.weixin");
+				}
+			}
+			$scope.showTabs = function() {
+				$rootScope.hideTabs = false;
+			}
+		}
+	]);

@@ -1,0 +1,15 @@
+<ion-view hide-nav-bar=true>
+	<ion-content class="padding forntpage" scroll=false>
+		<button class="button button-small button-dark btnlanguage" ng-click="showPop($event)">
+			{{languagebtn}}
+		</button>
+		<button class="button button-dark btnlogin" ng-click="Login()">
+			{{loginbtn}}
+		</button>
+
+		<button class="button button-balanced btnregist" ng-click="Register()">
+			{{registbtn}}
+		</button>
+
+	</ion-content>
+</ion-view>

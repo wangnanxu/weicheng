@@ -1,0 +1,44 @@
+<ion-modal-view ng-controller="WXContactCtrl">
+	<ion-header-bar align-title="left" class="bar-dark">
+		<div class="buttons">
+			<button class="button button-icon ion-ios-arrow-back" ng-click="closeModal('contact')"></button>
+		</div>
+		<h1 class="title">{{contact.Name}}</h1>
+	</ion-header-bar>
+	<ion-content delegate-handle="MessagesScroll" ng-class="{'contentheight':inputing}">
+		<ion-refresher pulling-text="下拉刷新..." on-refresh="">
+		</ion-refresher>
+		<ul>
+			<li ng-repeat="Message in Messages" id="message_{{$index}}" ng-show="messages.length-1-$index<10" on-repeat-finesh="MessagesScroll,message_{{$index}}">
+				<div class="messagetime">
+					{{Message.Time}}
+				</div>
+				<span class="triangle" ng-if="!message.isAudio" ng-class="{triangleright:Message.SendID==$root.userinfo.account,triangleleft:Message.SendID!=$root.userinfo.account}"></span>
+				<a name="{{Message.id}}" class="messagebox" ng-class="{boxright:Message.SendID==$root.userinfo.account,boxleft:Message.SendID!=$root.userinfo.account}">
+					<img ng-src="{{Message.Img}}" class="messageboximg" alt="头像" ng-class="{imgright:Message.SendID==$root.userinfo.account,imgleft:Message.SendID!=$root.userinfo.account}" />
+					<span class="contentbox" ng-if="Message.Type=='text'">{{Message.Content}}{{}}</span>
+					<span class="button audiobutton" ng-if="Message.Type=='audio'" ng-click="onPlay(Message.Content)">
+						<i class="icon ion-radio-waves"></i>
+					</span>
+					<p ng-if="Message.Type=='img'">
+						<img class="contentimg" ng-src="{{Message.Content}}" />
+					</p>
+				</a>
+				<!--<button ng-click="btn_{{$index}}=!btn_{{$index}}"  ng-class="{newclass:btn_{{$index}}}">测试</button>-->
+			</li>
+		</ul>
+	</ion-content>
+	<ion-footer-bar class="bar-stable" ng-class="{'footerheight':inputing}">
+		<button class="button button-icon button-clear" ng-model="toggleTA" ng-class="{'ion-ios-mic-outline':!toggleTA,'ion-ios-compose-outline':toggleTA}" ng-click="toggleTA=!toggleTA"></button>
+		<label class="item-input-wrapper" ng-if="!toggleTA">
+			<input type="text" placeholder="输入内容" ng-keyup="addMessage($event)" ng-focus="ResizeScroll(true)"  ng-blur="ResizeScroll(false)" ng-model="newMessage.Content" style="width: 100%;background: #EEEEEE;" required>
+		</label>
+		<button class="button button-block " style="margin: 0 4em 0 1em;" ng-if="toggleTA" on-hold="onTouch()" on-release="onRelease()" ng-click="clickAudio()">录音</button>
+		<button class="button button-icon button-clear ion-ios-plus-outline" ng-click="otherFun()">
+		</button>
+		<!--<button class="button button-icon button-clear ion-ios-plus-outline" ng-click="Camera()">拍照
+		</button>
+		<button class="button button-icon button-clear ion-ios-plus-outline" ng-click="Camera()">相册
+		</button>-->
+	</ion-footer-bar>
+</ion-modal-view>

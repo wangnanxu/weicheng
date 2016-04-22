@@ -1,0 +1,39 @@
+<ion-view view-title="微信">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-android-add" ng-click="showPop($event)">
+		</button>
+	</ion-nav-buttons>
+	<ion-content>
+		<div class="list">
+			<a class="item item-avatar mList" ng-click="openModal('user')">
+				<img ng-src="{{userinfo.image}}">
+				<h2>{{userinfo.nickname}}</h2>
+				<p>微信号：{{userinfo.account}}</p>
+			</a>
+
+			<a class="item item-icon-left mList" ng-click="openModal('gear')">
+				<i class="icon ion-ios-gear"></i> 设置
+			</a>
+			<a class="item item-icon-left mList" ng-click="showSheet()">
+				<i class="icon ion-ios-gear"></i> 分享
+			</a>
+		</div>
+		<input ng-model="newCacheKey" placeholder="Key">
+  <input ng-model="newCacheValue" placeholder="Value">
+  <button ng-click="put(newCacheKey, newCacheValue)">Cache</button>
+
+  <p ng-if="keys.length">Cached Values</p>
+  <div ng-repeat="key in keys">
+    <span ng-bind="key"></span>
+    <span>: </span>
+    <b ng-bind="cache.get(key)"></b>
+  </div>
+
+  <p>Cache Info</p>
+  <div ng-repeat="(key, value) in cache.info()">
+    <span ng-bind="key"></span>
+    <span>: </span>
+    <b ng-bind="value"></b>
+  </div>
+	</ion-content>
+</ion-view>

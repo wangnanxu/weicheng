@@ -1,0 +1,13 @@
+[
+	{
+		"account": "qc0000",
+		"password": "123456",
+		"nickname":"启程",
+		"image":"img/headme.jpg"
+	},{
+		"account": "qc0001",
+		"password": "123456",
+		"nickname":"思颖",
+		"image":"img/headyou.gif"
+	}
+]

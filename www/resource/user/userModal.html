@@ -1,0 +1,46 @@
+<ion-modal-view>
+	<ion-header-bar align-title="left" class="bar-dark">
+		<div class="buttons">
+			<button class="button button-icon ion-ios-arrow-back" ng-click="closeModal('user')"></button>
+		</div>
+		<h1 class="title">个人信息</h1>
+	</ion-header-bar>
+	<ion-content scroll=false>
+		<div class="list mList">
+			<label class="item item-input item-input-login item-height" ng-click="">
+				<span class="input-label">头像</span>
+				<span class="input-label input-label-right"><img src="img/ionic.png" class="img-label" /></span>
+			</label>
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">昵称</span>
+				<span class="input-label input-label-right" style="">启程</span>
+			</label>
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">微信号</span>
+				<span class="input-label input-label-right">18723137796</span>
+			</label>
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">二维码名片</span>
+				<span class="input-label input-label-right"></span>
+			</label>
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">我的地址</span>
+				<span class="input-label input-label-right"><img src="img/qrcode.png" class="img-label-small" /></span>
+			</label>
+		</div>
+		<div class="list mList">
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">性别</span>
+				<span class="input-label input-label-right">未填写</span>
+			</label>
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">地区</span>
+				<span class="input-label input-label-right">未填写</span>
+			</label>
+			<label class="item item-input item-input-login" ng-click="">
+				<span class="input-label">个性签名</span>
+				<span class="input-label input-label-right">未填写</span>
+			</label>
+		</div>
+	</ion-content>
+</ion-modal-view>

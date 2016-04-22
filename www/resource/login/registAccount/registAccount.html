@@ -1,0 +1,36 @@
+<ion-view view-title="{{language.title}}">
+	<ion-nav-back-button>
+		{{''}}
+	</ion-nav-back-button>
+	<ion-content class="padding center has-tabs" scroll=false>
+		<form name="registForm" ng-submit="doLogin()">
+			<div class="list">
+				<label class="item item-input item-input-login">
+					<span class="input-label">{{language.nickname}}</span>
+					<input type="text" ng-model="register.nickname" name="nickname" required>
+					<img src="img/ionic.png" class="img-label" />
+				</label>
+				<label class="item item-input item-input-login" ng-click="openModal()">
+					<span class="input-label">{{language.country}}</span>
+					<span class="input-label" style="position: absolute;right: 0;">{{selectCountry.country}}</span>
+				</label>
+				<label class="item item-input item-input-login">
+					<span class="input-label">{{selectCountry.areacode}}</span>
+					<input type="text" placeholder="{{language.loginplaceholder}}" name="account" ng-model="register.account" required>
+				</label>
+				<label class="item item-input item-input-login">
+					<span class="input-label">{{language.password}}</span>
+					<input type="password" placeholder="{{language.passwordplaceholder}}" name="password" ng-model="register.password" required>
+				</label>
+			</div>
+			<div class="btnlogin-w">
+				<button class="button button-balanced" type="submit" ng-disabled="registForm.nickname.$error.required||registForm.account.$error.required||registForm.password.$error.required">
+					{{language.registbtn}}
+				</button>
+			</div>
+			<div class="loginprogram">
+				{{language.registration}}<a href="#/regist">{{language.agreement}}</a>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

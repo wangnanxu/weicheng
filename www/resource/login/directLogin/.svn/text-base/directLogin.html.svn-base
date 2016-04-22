@@ -1,0 +1,27 @@
+<ion-view view-title="{{language.title}}">
+	<ion-content class="padding center" scroll=false>
+		<form name="directForm" ng-submit="doLogin()">
+			<div class="directHead">
+				<img ng-src="{{userinfo.image}}" />
+				<label>{{userinfo.account}}</label>
+			</div>
+			<div>
+				<label class="item item-input item-input-login item-input-focus">
+					<i class="icon ion-ios-locked-outline placeholder-icon"></i>
+					<input type="password" name="password" ng-model="userinfo.password" placeholder="{{language.passwordplaceholder}}" required>
+				</label>
+			</div>
+			<div class="btnlogin-w">
+				<button class="button button-balanced" type="submit" ng-disabled="directForm.password.$error.required">
+					{{language.loginbtn}}
+				</button>
+			</div>
+			<div class="loginprogram">
+				<a href="#/direct">{{language.loginproblem}}</a>
+			</div>
+			<div class="loginprogram">
+				<a href="#/direct" ng-click="show()">{{language.more}}</a>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

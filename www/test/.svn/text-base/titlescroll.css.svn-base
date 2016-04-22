@@ -1,0 +1,20 @@
+.cls_container {
+	border: 1px solid #ccc;
+	width: 680px;
+	font-size: 12px;
+	height: 24px;
+	overflow: hidden;
+}
+.cls_container ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 32px;
+}
+.cls_container ul li {
+	height: 24px;
+	line-height: 24px;
+	width: 100%;
+	float: left;
+	display: inline;
+}

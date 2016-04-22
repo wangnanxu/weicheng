@@ -1,0 +1,30 @@
+<ion-modal-view ng-controller="WXContactCtrl">
+	<ion-header-bar align-title="left" class="bar-dark">
+		<div class="buttons">
+			<button class="button button-icon ion-ios-arrow-back" ng-click="closeRootModal('addfriend')"></button>
+		</div>
+		<h1 class="title">添加朋友</h1>
+	</ion-header-bar>
+	<ion-content scroll=false>
+		<div class="list mList">
+			<label class="item item-input item-input-login item-input-focus">
+				<i class="icon ion-ios-search-strong placeholder-icon"></i>
+				<input type="text">
+			</label>
+		</div>
+		<div class="list mList">
+			<a class="item item-avatar" ng-click="scanCode()">
+				<img ng-src="{{userinfo.image}}">
+				<h2>扫一扫</h2>
+				<p>扫描二维码名片</p>
+			</a>
+		</div>
+		<div class="list mList">
+			<a class="item item-avatar" ng-click="AddContactsData()">
+				<img ng-src="{{userinfo.image}}">
+				<h2>添加数据</h2>
+			</a>
+		</div>
+		{{barcodeData}}
+	</ion-content>
+</ion-modal-view>

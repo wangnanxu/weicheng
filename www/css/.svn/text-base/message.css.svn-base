@@ -1,0 +1,235 @@
+.messagebox {
+	margin: 0;
+	padding: 1em 0;
+	display: block;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.messageboximg {
+	position: absolute;
+	top: 1em;
+	max-width: 40px;
+	max-height: 40px;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.contentimg {
+	width: 50%;
+	height: 50%;
+	margin: 5px 14px;
+	border: #CCCCCC solid 2px;
+	border-radius: 10px;
+}
+.contentexpreimg{
+	width: 30px;
+	height: 30px;
+	margin: 0 5px;
+}
+.imgleft {
+	left: 16px;
+}
+.imgright {
+	right: 16px;
+}
+.boxleft {
+	padding-left: 4em;
+	text-align: left;
+	padding-right: 5em;
+}
+.boxright {
+	padding-right: 4em;
+	text-align: right;
+	padding-left: 5em;
+}
+.messagetime {
+	margin: 0 auto;
+	font-family: "microsoft sans serif";
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	background: #D6DEDF;
+	width: 150px;
+	border-radius: 3px;
+	color: #FFFFFF;
+}
+.contentbox {
+	background: #A9F23B;
+	font-family: "microsoft sans serif";
+	font-size: 16px;
+	font-weight: 500;
+	padding: 7px;
+	border-radius: 5px;
+	border: solid 0.1em #C0C0C0;
+	line-height: 22px;
+	display: inline-table;
+	margin: 0 0.6em;
+	word-warp: break-word;
+	word-break: break-all
+}
+.triangle {
+	width: 0;
+	height: 0;
+	z-index: 9;
+	position: relative;
+	top: 1.8em;
+}
+.triangleright {
+	float: right;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left: 8px solid #A9F23B;
+	right: 4.2em;
+}
+.triangleleft {
+	float: left;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid #A9F23B;
+	left: 4.2em;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active,
+ion-tabs.tabs-color-active-positive .tab-item.active,
+ion-tabs.tabs-color-active-positive .tab-item.activated {
+	color: #04B404;
+}
+.audiobutton {
+	background: #E1F4F7;
+	padding: 7px;
+	border-radius: 5px;
+	border: solid 0.1em #E1E1DD;
+	margin: 0 0.6em;
+	display: initial;
+}
+.fullbutton {
+	width: 100%;
+	height: 40px;
+	position: relative;
+	text-align: left;
+	display: block;
+	background: #FFFFFF;
+	text-decoration: none;
+}
+a:visited,
+a:link,
+a:hover,
+a:active {
+	text-decoration: none;
+	color: #C0C0C0;
+}
+.fullbutton img {
+	width: 20px;
+	height: 20px;
+	margin: 10px 20px 10px 30px;
+}
+.fullbutton p {
+	position: absolute;
+	top: 0;
+	left: 70px;
+	margin: 10px 0;
+	line-height: 20px;
+	font-size: 16px;
+}
+/*微信页样式*/
+
+.weixintime {
+	position: absolute;
+	top: 16px;
+	right: 10px;
+}
+.contentheight {
+	bottom: 40%;
+}
+.footerheight {
+	height: 40%;
+}
+.button-arrow {
+	margin: 0 4em 0 1em;
+}
+.labelheight {
+	height: 33px;
+}
+.ContentHeight {
+	bottom: 294px;
+}
+.ContentLow {
+	bottom: 44px;
+}
+.FooterHeight {
+	height: 294px;
+}
+.FooterLow {
+	height: 44px;
+}
+.footertop {
+	border-bottom: solid 1px #E4E5E7;
+	height: 44px;
+	width: 100%;
+	display: block;
+}
+.footertop button {
+	/*display: inline-block;*/
+}
+.btnCTA {
+	width: 12%;
+	height: 100%;
+	padding: 0;
+}
+.btnTOA {
+	width: 60%;
+	display: inline-block;
+	height: 100%;
+}
+.btnTA {
+	width: 60%;
+	display: inline-block;
+	height: 100%;
+}
+.btnOB {
+	width: 23%;
+	/*margin-top:20px;*/
+	
+	height: 50%;
+}
+.nopadding {
+	padding-left: 0;
+	padding-right: 0;
+	/*padding-top: 0;*/
+}
+.footerbottom {
+	border-bottom: solid 1px #E4E5E7;
+	height: 206px;
+	width: 100%;
+	margin: 0 auto;
+	/*display
+	background: #009689;
+	/*position: relative;*/
+}
+.divaudio {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.divlist {
+	width: 100%;
+	height: 100%;
+}
+.btnaudio {
+	width: 150px;
+	height: 150px;
+	margin: 30px;
+	border-radius: 50%;
+}
+
+.exprespan{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	text-align: center;
+	margin: 10px 8px;
+}
+.expreimg{
+	width: 30px;
+	height: 30px;
+}
